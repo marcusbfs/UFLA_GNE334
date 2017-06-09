@@ -1,0 +1,72 @@
+%\documentclass{abntex2}
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern} 
+\usepackage[brazil]{babel} 
+\usepackage{graphicx} 
+\usepackage{indentfirst} 
+\usepackage{hyperref} 
+\usepackage{float} 
+\usepackage{microtype} 
+\usepackage{multirow} 
+
+
+\setlength{\parskip}{0.3cm}
+
+\title{Determinação de Ácido Acetilsalicílico em Medicamentos}
+\author{Marcus Bruno  \\Gabriela Nunes}
+\date{2017}
+%\local{LavrasMG}
+
+%\includeonly{capitulos/introducao}
+
+\begin{document}
+    %\imprimircapa
+    %\imprimirfolhaderosto
+    \maketitle
+    \newpage
+    \tableofcontents
+    \newpage
+
+    \include{capitulos/introducao}
+
+     \include{capitulos/materiais_metodos}
+
+     \section{Custos} \label{sec:Custos}
+     \begin{table}[H]
+         \caption{Custos}
+     \medskip
+         \label{t:custos}
+         \centering
+         \begin{tabular}{c | c }
+             \hline
+             \hline
+             \textbf{Material} & \textbf{Valor $(R\$)$} \\
+             \hline
+             Almofariz & 35.00\\
+         \end{tabular}
+     \end{table}
+
+     \include{capitulos/resultados}
+
+     \section{Cronograma} \label{sec:Cronograma}
+
+     %\begin{table}[H]
+         %\caption{Cronograma}
+         %\medskip
+         %\centering
+         %\begin{tabular}{| c | c |}
+             %\hline 
+             %\multirow{2}{*}{Atividades} & Semanas \\
+             %& 1  
+         %\end{tabular}
+     %\end{table}
+
+     \newpage
+     \bibliographystyle{plain}
+     \addcontentsline{toc}{section}{Referências}
+     \bibliography{bibliografia/b.bib}
+     
+\end{document}

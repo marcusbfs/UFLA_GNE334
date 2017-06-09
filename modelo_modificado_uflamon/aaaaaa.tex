@@ -1,0 +1,203 @@
+\documentclass{uflamon}          % classe base para a monografia
+
+%==============================================================================
+% Utilizacao de pacotes
+\usepackage[T1]{fontenc}         % usa fontes postscript com acentos
+\usepackage[brazil]{babel}       % hifenização e títulos em português do Brasil
+\usepackage[utf8]{inputenc}     % permite edição direta com acentos
+\usepackage{amsmath}             % pacote da AMS para Matemática Avançada
+\usepackage{amssymb}             % símbolos extras da AMS
+\usepackage{latexsym}            % símbolos extras do LaTeX
+\usepackage{graphicx}            % para inserção de gráficos
+\usepackage{listings}            % para inserção de código
+\usepackage{fancyvrb}            % para inserção de saídas de comandos
+%\usepackage{enumerate}           % para personalizar lista enumeradas 
+											%(incluso na classe)
+\usepackage{longtable}           % para tambelas muito grandes NOVO!!!!
+
+\usepackage{colortbl} % cores em tabelas
+\newcolumntype{Z}{|>{\columncolor[gray]{0.9}}l|} %cor cinza em células
+%\usepackage{array} % já incluso na classe
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{multirow} % para juntar duas linhas em uma só
+\usepackage{multicol} % para uso de várias colunas
+
+% cores para os links cruzados
+\usepackage{color}
+\definecolor{rltred}{rgb}{0.2,0,0}
+\definecolor{rltgreen}{rgb}{0,0.2,0}
+\definecolor{rltblue}{rgb}{0,0,0.2}
+
+\usepackage[colorlinks=true,
+            urlcolor=rltblue,       % \href{...}{...} external (URL)
+            filecolor=rltgreen,     % \href{...} local file
+            linkcolor=rltred,       % \ref{...} and \pageref{...}
+            citecolor=rltgreen,
+            pdftitle={Pr\'e-Projeto --AAS. Projetos em Qu\'imica Experimetal},
+          pdfauthor={Marcus Bruno Fernandes Silva},
+          pdfsubject={projeto sobre AAS},
+          pdfkeywords={aas}%
+]{hyperref} % para referência cruzadas
+%\usepackage{hyperref}            % para referência cruzadas
+\usepackage{subfigure}           % figuras dentro de figuras
+\usepackage{caption}            % remodelando o formato dos títulos de 
+                                 % tabelas e figuras
+
+% configuração padrão do listings   
+\lstset{
+   language=Java,
+   extendedchars=true,
+   tabsize=3,
+   basicstyle=\footnotesize\ttfamily,
+   stringstyle=\em,
+   showstringspaces=false 
+}
+
+% para referências de acordo com a ABNT
+% precisa instalar o abntex2 antes!!!
+% http://abntex.codigolivre.org.br/
+% comente se pretende usar outro padrão
+
+%abnt-emphasize=bf coloca o título das bibliografias em negrito
+%abnt-thesis-year=both
+\usepackage[alf,num,abnt-etal-cite=3,abnt-etal-list=3,abnt-url-package=url,abnt-emphasize=bf]{abntex2cite}
+
+% evite usar o hyperref com abntex, pode dar caca em urls... no linha anterior, informo
+% para incluir urls usando o pacote url e não o hyperref
+%
+% caso queira o hyperref com abntex, comente a linha anterior e descomente a seguinte
+%\usepackage[alf,abnt-etal-cite=3,abnt-etal-list=0,abnt-etal-text=emph]{abntex2cite}
+%
+% caso vc ainda use a versão anterior da abntex, comente a linha incluindo o abntex2cite
+% e descomente a próxima linha 
+%\usepackage[alf,abnt-etal-cite=3,abnt-etal-list=0,abnt-etal-text=emph]{abntcite}
+
+
+% redefinindo formatação de títulos de tabelas e figuras
+
+%==============================================================================
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{float}
+\usepackage{titling}
+
+% Especificando hifenizações que por ventura LaTeX não saiba fazer
+% Por padrão 99,9% dos termos em português devem ser hifenizados corretamente.
+\hyphenation{hardware software Li-nux am-bien-te diag-nos-ti-car coor-de-na-ção 
+FAE-PE Recovery TelEduc Williams UFLA Sérgio}
+
+%==============================================================================
+% Dados da monografia, capa: autor, titulo, banca, etc... - SUBSTITUA DE ACORDO
+%==============================================================================
+\author{Gabriela Nunes \\
+       Gustavo Henrique de Souza Paiva \\
+       Larissa Souza Castro \\
+       Marcus Bruno Fernandes Silva}
+\subtitle{Exemplo para os Usuários}
+%\author{Joao}
+\title{Determinação de Ácido Acetilsalicílico em Medicamentos}
+\engtitle{Use of Uflamon Class}
+%\engsubtitle{Sample for Users}
+%\edicao{3$^a$ edição revista, atualizada e ampliada}
+\date{2017}
+\tipo{Pré-projeto entregue e apresentado ao Professor Sérgio, como requisito da disciplina.}
+\orientador{Prof. Sergio Scherrer Thomasi}
+\newcommand{\orient}{Prof. Sergio Scherrer Thomasi}
+\newcommand{\otipo}{Pré-projeto entregue e apresentado ao Professor Sérgio, como requisito da disciplina GQI 169.}
+\newcommand{\olocal}{Lavras -- MG}
+\local{Lavras -- MG}
+
+%##################################################
+
+\newcommand \fazercapa{
+\begin{titlepage}
+    \centering
+
+    \includegraphics[scale=0.45]{logoufla}%
+
+    \vspace{1cm}
+
+    \Large\theauthor
+    
+    \vspace{\stretch{1}}
+
+    \bfseries\LARGE\MakeUppercase\thetitle
+
+    \vspace{\stretch{1}}
+
+    \Large\MakeUppercase\olocal\\
+    \MakeUppercase\thedate
+    \null
+    \cleardoublepage
+\end{titlepage}
+}
+
+\newcommand \fazerfolhaderosto{
+    \begin{titlepage}
+        \newpage
+
+        \begin{center}
+            \MakeUppercase\theauthor
+
+            \vspace{\stretch{1}}
+
+            \textbf{\MakeUppercase\thetitle}
+
+            \vspace{\stretch{1}}
+            
+            \hfill\begin{minipage}{8cm}{\otipo}\end{minipage} % tipo da monografia
+
+            \vspace{\stretch{.58}}
+
+            \ifthenelse{\equal{\@orientador}{\@empty}} % % se orientador nao existir,
+            {}%                                            % nao produza nada
+            {\orient\\
+             Orientador
+            }
+
+            \vspace{\stretch{.86}} 
+
+            \textbf{\MakeUppercase\olocal}\\ 
+            \textbf{\MakeUppercase\thedate}
+            \end{center}
+    \end{titlepage}
+}
+
+%==============================================================================
+% Começar o documento
+
+\begin{document}
+
+\fazercapa
+
+\fazerfolhaderosto
+
+\tableofcontents
+
+\clearpage
+
+\pagestyle{ufla}
+
+%==============================================================================
+% incluindo os capitulos
+
+\include{capitulos/introducao}
+\include{capitulos/materiais_metodos}
+\include{capitulos/custos}
+\include{capitulos/resultados}
+\include{capitulos/cronograma}
+
+%==============================================================================
+% Incluindo bibliografia
+%\bibliographystyle{plain}             % estilo para labels em numeros
+%\bibliographystyle{alpha}             % estilo para labels em iniciais
+\bibliographystyle{abntex2-num}           % estilo para referências usando ABNT, 
+
+%inclui Referências Bibliográficas
+\referencias
+\bibliography{bibliografia/b}
+
+%==============================================================================
+% Fim do texto
+\end{document}

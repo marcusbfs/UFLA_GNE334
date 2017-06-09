@@ -1,0 +1,174 @@
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	twoside,			% para impressão em recto e verso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{float}
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% ---
+\titulo{Determinação de Ácido Acetilsalicílico em Medicamentos}
+\autor{Gabriela Nunes \\
+       Gustavo Henrique de Souza Paiva \\
+       Larissa Souza Castro\\
+       Marcus Bruno Fernandes Silva}
+\local{Lavras, MG}
+\data{2017}
+\instituicao{%
+Universidade Federal de Lavras -- UFLA
+\par
+Departamento de Química
+\par
+GQI 169 -- Projetos em Química Experimental}
+\tipotrabalho{Tese (Doutorado)}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Pré-projeto entregue e apresentado ao Professor Sérgio, como requisito da disciplina.}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{%
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+% ---
+
+
+\begin{titlepage}
+    \begin{centering}
+        \includegraphics[scale=0.45]{figuras/logo_ufla}%
+
+        \vspace{1cm}
+    \end{centering}
+\end{titlepage}
+\imprimircapa
+
+\imprimirfolhaderosto
+
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+\textual
+
+    \include{capitulos/introducao}
+
+     \include{capitulos/materiais_metodos}
+
+     \chapter{Custos} \label{sec:Custos}
+     \begin{table}[H]
+         \label{t:custos}
+         \centering
+         \begin{tabular}{|c | c| }
+             \hline
+             \textbf{Material} & \textbf{Valor (R\$)} \\
+             \hline
+             Almofariz com pistilo & 35.00\\ \hline
+             Balança analítica & 4700.00 \\ \hline
+             Comprimidos de AAs 
+             \par(referência, genérico e similar) & 20.00 \\ \hline
+             Erlenmeyer 125mL & 9.00 \\ \hline
+             Etanol comercial & 80.00 \\ \hline
+             Hidróxido de Sódio (NaOH) & 20.00 \\ \hline
+             Indicador Fenolftaleína 0.1\% & 30.00 \\ \hline
+             Proveta 50mL & 8.00 \\ \hline
+             \textbf{TOTAL} & \textbf{4902.00} \\ \hline
+         \end{tabular}
+         \caption{Custos}
+     \end{table}
+
+     \include{capitulos/resultados}
+
+     \chapter{Cronograma} \label{sec:Cronograma}
+
+     \newpage
+% ----------------------------------------------------------
+\posttextual
+\bibliography{bibliografia/b}
+
+\phantompart
+
+\printindex
+
+
+\end{document}
