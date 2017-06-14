@@ -1,0 +1,25 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6 }
+
+\bibitem{Munson04}
+\abntrefinfo{{MUNSON, B. R.; YOUNG, D. F.; OKIISH, T. H.}}{{MUNSON, B. R.;
+  YOUNG, D. F.; OKIISH, T. H.}}{2004}
+{{MUNSON, B. R.; YOUNG, D. F.; OKIISH, T. H.} \textbf{{Fundamentos da Mecânica
+  dos Fluidos. 4. ed.}} S\~ao Paulo: Blucher, 2004.}
+
+\bibitem{Cremasco14}
+\abntrefinfo{Cremasco}{CREMASCO}{2014}
+{CREMASCO, M.~A. \textbf{{Operações Unitárias em Sistemas Particulados e
+  Fluidomecânicos. 2. ed.}} S\~ao Paulo: Blucher, 2014.}
+
+\bibitem{Potter15}
+\abntrefinfo{{POTTER, M. C.; WIGGERT, D. C.; RAMADAN, B. H.}}{{POTTER, M. C.;
+  WIGGERT, D. C.; RAMADAN, B. H.}}{2015}
+{{POTTER, M. C.; WIGGERT, D. C.; RAMADAN, B. H.} \textbf{{Mecânica dos
+  Fluidos. 4. ed.}} S\~ao Paulo: Cengage Learning, 2015.}
+
+\end{thebibliography}
