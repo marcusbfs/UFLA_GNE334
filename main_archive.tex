@@ -35,7 +35,7 @@
             urlcolor=rltblue,       % \href{...}{...} external (URL)
             filecolor=rltgreen,     % \href{...} local file
             linkcolor=black,       % \ref{...} and \pageref{...}
-            citecolor=rltgreen,
+            citecolor=black,
             pdftitle={Determinação da Perda de Carga por Acessórios},
           pdfauthor={Marcus Bruno Fernandes Silva},
           pdfsubject={Determinação da Perda de Carga por Acessórios},
@@ -56,25 +56,9 @@
    showstringspaces=false 
 }
 
-% para referências de acordo com a ABNT
-% precisa instalar o abntex2 antes!!!
-% http://abntex.codigolivre.org.br/
-% comente se pretende usar outro padrão
-
 %abnt-emphasize=bf coloca o título das bibliografias em negrito
 %abnt-thesis-year=both
 \usepackage[alf,num,abnt-etal-cite=3,abnt-etal-list=3,abnt-url-package=url,abnt-emphasize=bf]{abntex2cite}
-
-% evite usar o hyperref com abntex, pode dar caca em urls... no linha anterior, informo
-% para incluir urls usando o pacote url e não o hyperref
-%
-% caso queira o hyperref com abntex, comente a linha anterior e descomente a seguinte
-%\usepackage[alf,abnt-etal-cite=3,abnt-etal-list=0,abnt-etal-text=emph]{abntex2cite}
-%
-% caso vc ainda use a versão anterior da abntex, comente a linha incluindo o abntex2cite
-% e descomente a próxima linha 
-%\usepackage[alf,abnt-etal-cite=3,abnt-etal-list=0,abnt-etal-text=emph]{abntcite}
-
 
 % redefinindo formatação de títulos de tabelas e figuras
 
@@ -106,10 +90,10 @@ FAE-PE Recovery TelEduc Williams UFLA Sérgio Renata Reynolds disciplina}
 %\engsubtitle{Sample for Users}
 %\edicao{3$^a$ edição revista, atualizada e ampliada}
 \date{2017}
-\tipo{Pré-projeto entregue e apresentado a Professora Renata de A. B. L. Corrêa como requisito da disciplina GNE334.}
+\tipo{Pré-projeto entregue e apresentado à Professora Renata de A. B. L. Corrêa como requisito da disciplina GNE334.}
 \orientador{Professora Renata de A. B. L. Corrêa}
 \newcommand{\orient}{Professora Renata de A. B. L. Corrêa}
-\newcommand{\otipo}{Pré-projeto entregue e apresentado a Professora Renata de A. B. L. Corrêa como requisito da disciplina GNE334.}
+\newcommand{\otipo}{Pré-projeto entregue e apresentado à Professora Renata de A. B. L. Corrêa como requisito da disciplina GNE334.}
 \newcommand{\olocal}{Lavras -- MG}
 \local{Lavras -- MG}
 
@@ -201,10 +185,13 @@ FAE-PE Recovery TelEduc Williams UFLA Sérgio Renata Reynolds disciplina}
 \include{capitulos/descricao}
 
 %==============================================================================
+
 % Incluindo bibliografia
 %\bibliographystyle{plain}             % estilo para labels em numeros
 %\bibliographystyle{alpha}             % estilo para labels em iniciais
-\bibliographystyle{abntex2-num}           % estilo para referências usando ABNT, 
+\bibliographystyle{abntex2-num}         %% estilo para referências usando ABNT, 
+ %para usar o abntex2-alf precisa arrumar o nome dos autores na bibliografia
+%\bibliographystyle{abntex2-alf}           % estilo para referências usando ABNT, 
 
 %inclui Referências Bibliográficas
 \referencias

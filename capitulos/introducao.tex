@@ -1,8 +1,12 @@
+\newcommand{\citeay}[1]{\citeauthoronline{#1} (\citeyear{#1})}
+\newcommand{\citeayp}[1]{(\citeauthoronline{#1} \citeyear{#1})}
+\newcommand{\citean}[1]{\citeauthoronline{#1} \cite{#1}}
+
 \chapter{Introdução}\label{intro}
 
 \section{Referêncial Teórico}
 
-Segundo Munson et al. (2004) \cite{Munson04} ``a mecânica dos fluidos é a parte 
+Segundo \citeay{Munson04} ``a mecânica dos fluidos é a parte 
 da mecânica aplicada que se dedica à
 análise do comportamento dos líquidos e gases, tanto em equilíbrio quanto em 
 movimento. Obviamente, o escopo da mecânica
@@ -11,10 +15,11 @@ problemas.''
 
 Na análise do escoamento de fluidos é necessário o 
 balanço de massa e de momento para desenvolvimento de equações
-apropriadas aos fenômenos a serem analisados \cite{Cremasco14}.
+apropriadas aos fenômenos a serem analisados \citeayp{Cremasco14}.
 A descrição matemática da fluidodinâmica é dada pelas 
 equações de massa \eqref{eqcontinuidade}
 e equações do movimento \eqref{eqQDM}.
+
 
 \begin{equation}\label{eqcontinuidade}
     \frac{\partial\rho}{\partial t} + 
@@ -36,14 +41,6 @@ onde $\rho$ é a massa específica do fluido, \textbf{u} é a sua velocidade,
 $\vec{\nabla}\varphi$ é o vetor intensidade do campo, $\vec{\nabla} P$ é o gradiente
 de pressão e $\tau$ é a tensão extra, dinâmica ou viscosa.
 
-%\begin{align*}
-    %\rho &= \textrm{massa específica do fluido} \\
-    %\textbf{u} &= \textrm{velocidade} \\
-    %\vec{\nabla}\varphi &= \textrm{vetor intensidade do campo} \\
-    %\vec{\nabla} P &= \textrm{gradiente de pressão}  \\
-    %\tau &= \textrm{tensão extra, dinâmica ou viscosa} 
-%\end{align*}
-
 Ao manipular as equações \eqref{eqcontinuidade} e 
 \eqref{eqQDM}, considerando que o fluido se encontra em
 regime permanente, é invíscido e incompressível, chega-se a
@@ -53,25 +50,26 @@ equação simplificada para a energia mecânica:
     \left(
         z + \frac{P}{\rho g} + \frac{u^2}{2g}
     \right)_{1}
+    + h_L
     =
     \left(
         z + \frac{P}{\rho g} + \frac{u^2}{2g}
-    \right)_{2} + h_L
+    \right)_{2}
 \end{equation}
 
 onde os subíndices $1$ e $2$ indicam dois pontos de escoamento dinstintos, e $h_L$ é
 a perda de carga dada em unidades de comprimento.
 
-Conforme Cremasco \cite{Cremasco14}, um fluido em um sistema de 
+Conforme \citeay{Cremasco14}, um fluido em um sistema de 
 escoamento que apresente 
 acessórios estará sujeito a uma perda de
 carga, uma vez que, segundo o autor, quando o fluido entra em contato com 
 um acessório ocorre a separação de uma camada
-do escoamento, formando correntes turbulentas que convertem energia mecânica 
-em cinética e, em virtude a conservação da
-massa, esse aumento na energia cinética deverá ser convertido em energia 
-térmica, uma vez que a massa específica do
-fluido e o diâmetro da tubulação se mantiveram constantes.
+do escoamento, formando correntes turbulentas que dissipam energia mecânica. 
+Essa energia dissipada é representa a conversão irreversível de energia mecânica 
+em energia térmica não desejada e em perda perda de energia por transferência de 
+calor \citeayp{Fox14}.
+
 
 A perda de carga oriunda de um acessório em um sistema de escoamento é definida por meio da equação:
 
@@ -82,17 +80,16 @@ A perda de carga oriunda de um acessório em um sistema de escoamento é definid
 onde $k_f$ é o coeficiente de perda de carga localizada característico do acessório, 
 $u$ é a velocidade média do fluido e $g$ é a aceleração local da gravidade. 
 
-Ainda conforme o autor, $k_f$ é constante apenas em regime turbulento. Podem-ser 
+Ainda conforme o autor, $k_f$ é constante apenas em regime turbulento. Podem ser 
 encontradas na literatura tabelas que apresentam os valores de $k_f$ para válvulas
 e acessórios específicos.
 
-
-De acordo com Potter \cite{Potter15}, o regime turbulento é caracterizado 
+De acordo com \citeay{Potter15}, o regime turbulento é caracterizado 
 pelo movimento
 aleatório das partículas do fluido na
 trajetória do escoamento. Tal regime pode ser previsto por um número 
 adimensional denominado por número de Reynolds,
-cujo qual á calculado, para tubulações cilíndricas, conforme:
+cujo qual é calculado, para tubulações cilíndricas, conforme:
 
 \begin{equation}
     Re = \frac{u D}{\nu}
@@ -101,17 +98,16 @@ cujo qual á calculado, para tubulações cilíndricas, conforme:
 onde $D$ é o diâmetro característico da tubulação e $\nu$ é a viscosidade 
 cinemática do fluido.
 
-Ainda conforme Potter \cite{Potter15}, valores para o número de 
-Reynolds acima de 2000 é 
-característica de um escoamento em regime
-turbulento e é o valor mínimo usado na maioria das aplicações em engenharia, 
-quando da caracterização do sistema como
-turbulento, entretanto, tal valor pode variar em decorrência da geometria e da 
+Ainda conforme \citeay{Potter15}, valores para o número de 
+Reynolds acima de 2000 são 
+características de um escoamento em regime
+turbulento, sendo este o valor mínimo usado na maioria das aplicações em engenharia.
+Entretanto, tal valor pode variar em decorrência da geometria e da 
 rugosidade das paredes da tubulação.
 
 Portanto, além do cálculo adimensional, pode ser realizada uma análise 
 qualitativa por meio do despejo de partículas
-corantes na corrente de escoamento e avaliar se ocorre mistura imediata, ou 
+corantes na corrente de escoamento, avaliando se ocorre uma mistura imediata, ou 
 não. Caso não, o regime é laminar.
 
 \section{Aplicabilidade}
