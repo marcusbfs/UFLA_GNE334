@@ -1,25 +1,15 @@
-\newcommand{\citeay}[1]{\citeauthoronline{#1} (\citeyear{#1})}
-\newcommand{\citeayp}[1]{(\citeauthoronline{#1} \citeyear{#1})}
-\newcommand{\citean}[1]{\citeauthoronline{#1} \cite{#1}}
-
 \chapter{Introdução} \label{intro}
 
 \section{Referencial Teórico}
 
-Segundo \citeay{Munson04} ``a mecânica dos fluidos é a parte 
-da mecânica aplicada que se dedica à
-análise do comportamento dos líquidos e gases, tanto em equilíbrio quanto em 
-movimento. Obviamente, o escopo da mecânica
-dos fluidos abrange um vasto conjunto de 
-problemas.''
+Segundo \citeay{Munson04} ``a mecânica dos fluidos é a parte da mecânica aplicada que se dedica à
+análise do comportamento dos líquidos e gases, tanto em equilíbrio quanto em movimento.
+Obviamente, o escopo da mecânica dos fluidos abrange um vasto conjunto de problemas.''
 
-Na análise do escoamento de fluidos é necessário o 
-balanço de massa e de momento para desenvolvimento de equações
-apropriadas aos fenômenos a serem analisados \citeayp{Cremasco14}.
-A descrição matemática da fluidodinâmica é dada pelas 
-equações de massa \eqref{eqcontinuidade}
+Na análise do escoamento de fluidos é necessário o balanço de massa e de momento 
+para desenvolvimento de equações apropriadas aos fenômenos a serem analisados \citeayp{Cremasco14}.
+A descrição matemática da fluidodinâmica é dada pelas  equações de massa \eqref{eqcontinuidade}
 e equações do movimento \eqref{eqQDM}.
-
 
 \begin{equation}\label{eqcontinuidade}
     \frac{\partial\rho}{\partial t} + 
@@ -37,14 +27,13 @@ e equações do movimento \eqref{eqQDM}.
     \vec{\nabla}\cdot \tau
 \end{equation}
 
-onde $\rho$ é a massa específica do fluido, \textbf{u} é a sua velocidade,
-$\vec{\nabla}\varphi$ é o vetor intensidade do campo, $\vec{\nabla} P$ é o gradiente
-de pressão e $\tau$ é a tensão extra, dinâmica ou viscosa.
+onde $\rho$ é a massa específica do fluido, \textbf{u} é a sua velocidade, $\vec{\nabla}\varphi$
+é o vetor intensidade do campo, $\vec{\nabla} P$ é o gradiente de pressão e $\tau$ é a tensão extra,
+dinâmica ou viscosa.
 
-Ao manipular as equações \eqref{eqcontinuidade} e 
-\eqref{eqQDM}, considerando que o fluido se encontra em
-regime permanente, é invíscido e incompressível, chega-se a
-equação simplificada para a energia mecânica:
+Ao manipular as equações \eqref{eqcontinuidade} e \eqref{eqQDM}, considerando que o fluido se
+encontra em regime permanente, é invíscido e incompressível, chega-se a equação simplificada
+para a energia mecânica:
 
 \begin{equation}\label{eqBern}
     \left(
@@ -59,16 +48,12 @@ equação simplificada para a energia mecânica:
 onde os subíndices $1$ e $2$ indicam dois pontos de escoamento dinstintos, e $h_L$ é
 a perda de carga dada em unidades de comprimento.
 
-Conforme \citeay{Cremasco14}, um fluido em um sistema de 
-escoamento que apresente 
-acessórios estará sujeito a uma perda de
-carga, uma vez que, segundo o autor, quando o fluido entra em contato com 
-um acessório ocorre a separação de uma camada
-do escoamento, formando correntes turbulentas que dissipam energia mecânica. 
-Essa energia dissipada representa a conversão irreversível de energia mecânica 
-em energia térmica não desejada e a perda de energia por transferência de 
+Conforme \citeay{Cremasco14}, um fluido em um sistema de escoamento que apresente acessórios
+estará sujeito a uma perda de carga, uma vez que, segundo o autor, quando o fluido entra em contato
+com um acessório ocorre a separação de uma camada do escoamento, formando correntes turbulentas
+que dissipam energia mecânica. Essa energia dissipada representa a conversão irreversível de
+energia mecânica em energia térmica não desejada e a perda de energia por transferência de 
 calor \citeayp{Fox14}.
-
 
 A perda de carga oriunda de um acessório em um sistema de escoamento é definida por meio da equação:
 
@@ -83,31 +68,25 @@ Ainda conforme o autor, $k_f$ é constante apenas em regime turbulento. Podem se
 encontradas na literatura tabelas que apresentam os valores de $k_f$ para válvulas
 e acessórios específicos.
 
-De acordo com \citeay{Potter15}, o regime turbulento é caracterizado 
-pelo movimento
-aleatório das partículas do fluido na
-trajetória do escoamento. Tal regime pode ser previsto por um número 
-adimensional denominado por número de Reynolds,
-o qual é calculado, para tubulações cilíndricas, conforme:
+De acordo com \citeay{Potter15}, o regime turbulento é caracterizado pelo movimento
+aleatório das partículas do fluido na trajetória do escoamento. Tal regime pode ser previsto
+por um número adimensional denominado por número de Reynolds, o qual é calculado, para tubulações
+cilíndricas, conforme:
 
 \begin{equation}
     Re = \frac{u D}{\nu}
 \end{equation}
  
-onde $D$ é o diâmetro característico da tubulação e $\nu$ é a viscosidade 
-cinemática do fluido.
+onde $D$ é o diâmetro característico da tubulação e $\nu$ é a viscosidade cinemática do fluido.
 
-Ainda conforme \citeay{Potter15}, valores para o número de 
-Reynolds acima de 2000 são 
-características de um escoamento em regime
-turbulento, sendo este o valor mínimo usado na maioria das aplicações em engenharia.
-Entretanto, tal valor pode variar em decorrência da geometria e da 
-rugosidade das paredes da tubulação.
+Ainda conforme \citeay{Potter15}, valores para o número de Reynolds acima de 2000 são 
+características de um escoamento em regime turbulento, sendo este o valor mínimo
+usado na maioria das aplicações em engenharia. Entretanto, tal valor pode variar
+em decorrência da geometria e da rugosidade das paredes da tubulação.
 
 Portanto, além do cálculo adimensional, pode ser realizada uma análise 
-qualitativa por meio do despejo de partículas
-corantes na corrente de escoamento, avaliando se ocorre uma mistura imediata, ou 
-não. Caso não, o regime é laminar.
+qualitativa por meio do despejo de partículas corantes na corrente de escoamento,
+avaliando se ocorre uma mistura imediata, ou não. Caso não, o regime é laminar.
 
 \section{Aplicabilidade}
 
@@ -115,21 +94,18 @@ O cálculo da perda de carga é necessário em qualquer tipo de planejamento
 e instalação de tubulações, uma vez que o mesmo está relacionado diretamente
 com o matérial utilizado e as características da tubulação.
 
- Algumas situações que requerem uma análise da perda de carga podem ser 
-exemplificadas como: possível cavitação em
-bombas, danos à tubulação de edifícios, insuficiência na captação de água e/ou 
-esgoto para tratamento e controle de
-fluxo em reatores e outros 
-equipamentos da indústria química.
+Algumas situações que requerem uma análise da perda de carga podem ser 
+exemplificadas como: possível cavitação em bombas, danos à tubulação
+de edifícios, insuficiência na captação de água e/ou esgoto para
+tratamento e controle de fluxo em reatores e outros  equipamentos da indústria química.
 
 \section{Objetivos}
 
 O objetivo desse projeto é determinar a perda de carga e o coeficiente de 
-perda de carga localizada em um tubo conectado
-a dois reservatórios com um fluxo de água constante através de acessórios 
-(individualmente) como registros e cotovelos a
-partir da variação de pressão entre os pontos anterior e 
-posterior aos acessórios.
+perda de carga localizada em um tubo conectado a dois reservatórios com
+um fluxo de água constante através de acessórios (individualmente) como
+registros e cotovelos a partir da variação de pressão entre os pontos
+anterior e posterior aos acessórios.
 
 %%% Local Variables:
 %%% mode: latex

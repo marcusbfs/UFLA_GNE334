@@ -2,6 +2,8 @@
 auto
 prv*
 *_region_*
+*ltximg*
+*.swp
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
