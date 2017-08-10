@@ -26,9 +26,17 @@ analisados pela tazão volumétrica do fluido de trabalho -- água.
 
 As vazões obtidas para cada amostragem foram calculadas considerando os tempos
 necessários para que o volume ocupado pelo fluido no recipiente refratário
-utilizado alcançasse 8 e 12L. Portanto, utilizando-se dos dados constantes na
-tabela \ref{t:tempos}, apresenta-se a tabela seguinte, cuja qual relaciona a vazão do sistema
-para cada amostra.
+utilizado alcançasse 8 e 12L, utilizando a seguinte equação:
+
+\newcommand{\Vol}{\mathop{\ooalign{\hfil$V$\hfil\cr\kern0.08em--\hfil\cr}}\nolimits}
+\begin{equation}
+  Q = \frac{\Vol}{\Delta t}
+\end{equation}
+
+onde $Q$ é a vazão e $\Vol$ é o volume preenchido durante o intervalo de tempo
+$\Delta t$. Assim, utilizando-se dos dados constantes na tabela \ref{t:tempos},
+apresenta-se a tabela seguinte, cuja qual relaciona a vazão do sistema para cada
+amostra.
 
 \begin{table}[H]
 \centering
@@ -51,11 +59,148 @@ para cada amostra.
 \label{sec:VelFluido}
 
 A partir dos dados da tabela \ref{t:vazao}, calculou-se as respectivas
-velocidades do fluido no sistema para cada amostra. Tais velocidades foram
-consideradas constantes em todo o sistema, pois o fluido de trabalho foi a água
-no estado líquido, portanto incompressível e a área da seção transversal do
-escoamento interno manteve-se constante (tubo rígido). Tais velocidades estão
-relacionadas às respectivas amostragens, conforme a seguinte tabela.
+velocidades do fluido no sistema para cada amostra utilizando a equação
+
+\begin{equation}
+  v = \frac{4 Q}{\pi D^2}
+\end{equation}
+
+onde $v$ é a velocidade média do fluido e $D$ é o diâmetro hidráulico da
+tubulação.
+
+Tais velocidades foram consideradas constantes em todo o sistema, pois o fluido
+de trabalho foi a água no estado líquido, portanto incompressível e a área da
+seção transversal do escoamento interno manteve-se constante (tubo rígido). Tais
+velocidades estão relacionadas às respectivas amostragens, conforme a seguinte
+tabela.
+
+\begin{table}[H]
+\centering
+\caption{Velocidade e número de Reynolds por ângulo de abertura.}
+\label{t:Reynolds}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{\textbf{Velocidade e  número de Reynolds}}                                                      \\ \hline
+\textbf{}        & \multicolumn{2}{c|}{\textbf{$0^\circ$}}         & \multicolumn{2}{c|}{\textbf{$45^\circ$}}        \\ \hline
+\textbf{Amostra} & \textbf{Velocidade ($m/s$)} & \textbf{Reynolds} & \textbf{Velocidade ($m/s$)} & \textbf{Reynolds} \\ \hline
+1                & 0,67244256                  & 13397,8475        & 0,30165304                  & 6010,18103        \\ \hline
+2                & 0,53665026                  & 10692,3012        & 0,29937664                  & 5964,82561        \\ \hline
+3                & 0,54677655                  & 10894,0590        & 0,29840899                  & 5945,54597        \\ \hline
+4                & 0,5382482                   & 10724,1389        & 0,2996254                   & 5969,78182        \\ \hline
+5                & 0,53813161                  & 10721,8157        & 0,30096016                  & 5996,37588        \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Cálculo do número de Reynolds (Re)}
+\label{sec:Reynolds}
+
+O $Re$ do sistema foi calculado para cada amostragem considerando a equação
+\eqref{numReynolds}, na qual a variável geométrica característica para tubos
+circulares é o diâmetro. As propriedades do fluido foram consultadas na
+literatura considerando a pressão local igual a 1 atm ($101,325$ kPa) e a
+$20^\circ$ C ($293,15$ K). Tais valores são apresentados na tabela
+\ref{t:Reynolds}.
+
+Conforme a tabela \ref{t:Reynolds}, cada amostragem apresentou $Re > 2000$ (valor
+de referência utilizado conforme descrito no referencial teórico) caracterizando
+para cada amostragem escoamento em regime turbulento.
+
+\section{Cálculo do coeficiente de perda localizada ($k_f$)}
+\label{sec:carga}
+
+Conforme \citeay{Cremasco14}, em regime turbulento o coeficiente de perda de
+carga localizada ($k_f$) da equação \eqref{PerdaDeCarga} é constante. Portanto,
+tal coeficiente pode ser avaliado ao ser isolado da equação
+\eqref{PerdaDeCarga}, uma vez que a perda de carga total referente à
+configuração do sistema avaliado pode ser determinada e igualada a perda de
+carga localizada, pois as perdas de cargas maiores foram desprezadas em
+decorrência da pequena distância entre os pontos analisados e da rugosidade
+relativa do tubo (de PVC) ser desprezível (tubo liso).
+
+Apresentam-se, então, as seguintes tabelas, cujas quais relacionam a amostragem
+às respectivas alturas de pressão (Tabela \ref{t:alturas}) e os coeficientes
+de perda de carga localizados calculados (Tabela \ref{t:kf}). Para cálculo dos
+valores de perda de carga e do coeficiente de perda de carga, as seguintes
+equações foram utilizadas:
+
+\begin{equation}\label{eq:hL}
+h_L = z_1 - z_2
+\end{equation}
+
+\begin{equation}\label{eq:kf}
+  k_f = \frac{2 g h_L}{v^2}
+\end{equation}
+
+onde $z_1$ e $z_2$ são a altura da coluna de água coletada nos manômetros
+situados antes e após a válvula esférica, respectivamente. A equação
+\eqref{eq:hL} pode ser obtida através da equação \eqref{eqBern}, aplicando-a
+corretamente para o sistema apresentado.
+
+\begin{table}[H]
+\centering
+\caption{Altura manométrica amostral por ângulo de abertura.}
+\label{t:alturas}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{\textbf{Alturas (cm)}}                                                           \\ \hline
+\textbf{}        & \multicolumn{2}{c|}{\textbf{$0^\circ$}} & \multicolumn{2}{c|}{\textbf{$45^\circ$}} \\ \hline
+\textbf{Amostra} & \textbf{z1 (cm)}   & \textbf{z2 (cm)}   & \textbf{z1 (cm)}    & \textbf{z2 (cm)}   \\ \hline
+1                & 9,0                & 3,5                & 71,6                & 3,3                \\ \hline
+2                & 7,6                & 3,6                & 72,2                & 3,1                \\ \hline
+3                & 7,4                & 3,7                & 72,3                & 3,4                \\ \hline
+4                & 7,5                & 4,0                & 72,5                & 3,6                \\ \hline
+5                & 7,8                & 4,2                & 71,9                & 3,5                \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Perda de carga e coeficiente de perda de carga amostral por ângulo de abertura.}
+\label{t:kf}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{\textbf{Perda de Carga e Coeficiente de Perda de Carga}}                               \\ \hline
+\textbf{}              & \multicolumn{2}{c|}{\textbf{$0^\circ$}} & \multicolumn{2}{c|}{\textbf{$45^\circ$}} \\ \hline
+\textbf{Amostra}       & \textbf{$h_L$ (m)}   & \textbf{$k_f$}   & \textbf{$h_L$ (m)}    & \textbf{$k_f$}   \\ \hline
+1                      & 0,055                & 2,38644435       & 0,683                 & 147,266607       \\ \hline
+2                      & 0,040                & 2,72506149       & 0,691                 & 151,265967       \\ \hline
+3                      & 0,037                & 2,42818046       & 0,689                 & 151,807917       \\ \hline
+4                      & 0,035                & 2,3702921        & 0,689                 & 150,577813       \\ \hline
+5                      & 0,036                & 2,43907135       & 0,684                 & 148,162087       \\ \hline
+\textbf{Desvio Padrão} & 0,00826438           & 0,14550331       & 0,00349285            & 1,99282035       \\ \hline
+\textbf{Média}         & 0,0406               & 2,52190594       & 0,6872                & 149,812607       \\ \hline
+\end{tabular}
+\end{table}
+
+A NBR 12214/1992 (Projeto de sistema de bombeamento de água para abastecimento
+público, \cite{NBR12214}), em seu anexo B, traz valores para os coeficientes de
+perda de carga localizada para a equação \eqref{PerdaDeCarga} para o acessório
+utilizado -- válvula esférica. Para a abertura de $0^\circ$ (totalmente aberta),
+$k_f$ = 0. Já para abertura de $45^\circ$, $k_f$ = $31,2$.
+
+Conforme a tabela acima, para a abertura de $0^\circ$ o $k_f$ obtido foi igual a
+$2,5219 \pm 0,1455$. Já para a abertura de $45^\circ$, o $k_f$ obtido foi igual
+a $149,8126 \pm 1,9928$. Ambos os resultados diferiram, estatisticamente ao
+nível de 95\% de confiança, dos respectivos valores referenciados pela norma
+supracitada.
+
+Tais diferenças podem ser justificadas devido às adaptações realizadas no
+sistema analisado, cujas quais podem ter prejudicado os resultados para as duas
+configurações. Além disso, há que se considerar os erros sistemáticos e
+aleatórios presentes durante a aquisição dos dados.
+
+Dos erros sistemáticos, citam-se:
+\begin{itemize}
+\item Instrumental: Na determinação do volume do refratário inferior, cujo qual
+  pode ter sido mal calibrado;
+\item Observacional: Erro paralaxe na leitura dos tempos;
+\item Teórico: Oriundo da simplificação das equações que modelam o sistema.
+\end{itemize}
+
+Dos erros aleatórios, cita-se:
+\begin{itemize}
+\item Observacional: Erro na leitura da altura da coluna de fluido.
+\end{itemize}
 
 %%% Local Variables:
 %%% mode: latex
